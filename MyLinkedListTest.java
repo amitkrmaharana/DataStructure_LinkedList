@@ -110,4 +110,22 @@ public class MyLinkedListTest {
         myLinkList.printMyNodes();
         Assert.assertTrue(result);
     }
+    @Test
+    public void given3NumberSearchAndDeleteNumberProvided() {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myFourthNode = new MyNode<>(40);
+        MyLinkedList myLinkList = new MyLinkedList();
+        myLinkList.add(myFirstNode);
+        myLinkList.append(mySecondNode);
+        myLinkList.append(myFourthNode);
+        myLinkList.append(myThirdNode);
+        myLinkList.printMyNodes();
+        boolean result = myLinkList.searchValue(myFourthNode);
+        if (result)
+            myLinkList.deleteNode(myFourthNode);
+        myLinkList.printMyNodes();
+        Assert.assertTrue(result);
+    }
 }

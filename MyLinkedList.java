@@ -54,6 +54,15 @@ public class MyLinkedList {
         }
         return false;
     }
+    public void deleteNode(Inode myNode) {
+        Inode tempNode = head;
+        Inode nextNode = null;
+        while(tempNode != null && tempNode.getKey() != myNode.getKey()) {
+            nextNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        nextNode.setNext(tempNode.getNext());
+    }
     public void printMyNodes(){
         StringBuffer myNodes = new StringBuffer("My nodes: ");
         Inode tempNode= head;
